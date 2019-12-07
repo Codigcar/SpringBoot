@@ -19,31 +19,31 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "patients")
 public class Patient {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+
 	@NotEmpty(message = "Ingrese nombre")
 	@Column(name = "name",nullable = false,length = 90)
 	private String fistName;
 	
 	@NotEmpty(message = "Ingrese apellido")
-	@Column(name = "name",nullable = false,length = 90)
+	@Column(name = "secondname",nullable = false,length = 90)
 	private String lastName;
 
 	@Size(min=8,max=8)
 	@NotEmpty(message = "Ingrese dni")
 	@Column(name = "dni",nullable = false,length = 8)
 	private String dni;
-	
-	/*RELACION*/
+
 	@OneToMany(mappedBy = "patientId",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	private List<Sign> signosVitales;//1 paciente tiene varios ginos
 	
 	@OneToMany(mappedBy = "patientId",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	private List<Voucher> vouchers;//1 paciente tiene varios vouchers
-	/*END RELACION*/
+	
 	
 	public Patient() {
 	signosVitales=new ArrayList<>();
@@ -62,29 +62,7 @@ public class Patient {
 		this.id = id;
 	}
 
-	public String getFistName() {
-		return fistName;
-	}
 
-	public void setFistName(String fistName) {
-		this.fistName = fistName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getDni() {
-		return dni;
-	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
 
 	public List<Sign> getSignosVitales() {
 		return signosVitales;
@@ -102,7 +80,7 @@ public class Patient {
 		this.vouchers = vouchers;
 	}
 	
-	
+
 	
 	
 }

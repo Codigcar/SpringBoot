@@ -17,6 +17,6 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
 	@Query("select p from Patient p left join fetch p.vouchers v where p.id=?1")
 	Optional<Patient> fetchByPatientIdWithVoucher(Long id);
 	
-	@Query("select p from Patient p left join fetch p.signs s where p.id=?1")
+	@Query("select p from Patient p left join fetch p.signosVitales s where p.id=?1")
 	Optional<Patient> fetchByPatientIdWithSigns(Long id);
 }
