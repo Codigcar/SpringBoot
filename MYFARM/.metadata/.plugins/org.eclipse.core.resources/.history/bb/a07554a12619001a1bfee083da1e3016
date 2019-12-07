@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head th:fragment="head">
+<!-- HEAD INCLUIDO EN EL RESTO DE PAG -->
+	<meta charset="UTF-8">
+	<title>Farma</title>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrinck-to-fit=no" />
+	<meta name="title" 
+		content="Farma - Cuidamos  tu salud" />
+		
+	<meta name="description"
+		content="Farma es una cadena de farmacias comercializadora de medicamentos y productos de higiene"/>
+	<meta name="author" content="Henry Antonio Mendoza Puerta" />
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+	
+<!-- END HEAD -->
+</head>
+<body>
+
+	<header th:fragment="header" >
+		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+		  <a class="navbar-brand" th:href="@{/}">Farm</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="@{/patients/list}">Paciente <span class="sr-only">(current)</span></a>
+		      </li>
+		     
+		    </ul>
+		   
+		  </div>
+</nav>
+	
+	<div class="alert alert-sucess" th:if="${success !=null}"
+		th:text="${success}" ></div>
+	<div class="alert alert-danger" th:if="${error !=null}"
+		th:text="${error}" ></div>
+		<div class="alert alert-info" th:if="${info !=null}"
+		th:text="${info}" ></div>
+	
+	</header>
+
+</body>
+</html>

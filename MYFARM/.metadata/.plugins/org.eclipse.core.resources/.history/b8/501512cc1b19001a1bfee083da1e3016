@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<!-- HEAD INCLUIDO EN EL RESTO DE PAG -->
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- END HEAD -->
+</head>
+<body>
+
+</body>
+</html>

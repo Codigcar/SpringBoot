@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head th:fragment="head">
+<!-- HEAD INCLUIDO EN EL RESTO DE PAG -->
+	<meta charset="UTF-8">
+	<title>Farma</title>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrinck-to-fit=no" />
+	<meta name="title" 
+		content="Farma - Cuidamos  tu salud" />
+		
+	<meta name="description"
+		content="Farma es una cadena de farmacias comercializadora de medicamentos y productos de higiene"/>
+	<meta name="author" content="Henry Antonio Mendoza Puerta" />
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+	
+<!-- END HEAD -->
+</head>
+<body>
+
+	<header th:fragment="header" >
+	
+	</header>
+
+</body>
+</html>

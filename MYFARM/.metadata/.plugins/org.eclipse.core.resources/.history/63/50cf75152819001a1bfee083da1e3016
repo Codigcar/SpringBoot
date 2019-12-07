@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head th:replace="layout/layout :: head">
+
+<body>
+	<header th:replace="layout/layout :: header" ></header>
+	
+	<div class="container" ></div>
+	
+	
+	<footer th:replace ="layout/layout :: footer" ></footer>
+</body>
+</html>

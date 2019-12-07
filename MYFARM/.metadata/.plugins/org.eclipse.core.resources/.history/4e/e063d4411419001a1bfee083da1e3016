@@ -1,0 +1,19 @@
+package com.farma.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.farma.entities.Patient;
+import com.farma.service.PatientService;
+import com.farma.service.SignService;
+
+public class SignServiceImpl implements SignService {
+
+	@Autowired
+	private SignService signService; 
+	
+	
+
+}

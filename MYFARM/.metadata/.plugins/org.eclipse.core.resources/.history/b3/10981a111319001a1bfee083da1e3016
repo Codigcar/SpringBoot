@@ -1,0 +1,63 @@
+package com.farma.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.farma.entities.Patient;
+import com.farma.repository.PatientRepository;
+import com.farma.service.PatientService;
+
+public class PatientServiceImpl implements PatientService {
+
+	@Autowired
+	private PatientRepository patientRepository; 
+	
+	@Transactional()
+	@Override
+	public List<Patient> findAll() throws Exception {
+		// TODO Auto-generated method stub
+		return patientRepository.findAll();
+	}
+
+	@Override
+	public Patient save(Patient t) throws Exception {
+		// TODO Auto-generated method stub
+		return ;
+	}
+
+	@Override
+	public Optional<Patient> findById(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteById(Long id) throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Patient> findByDni(String dni) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<Patient> fetchByPatienIdWithVouchers(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<Patient> fetchByPatientIdWithSigns(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

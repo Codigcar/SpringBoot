@@ -17,13 +17,13 @@ public class MedicineServiceImpl  implements MedicineService{
 	@Autowired
 	private MedicineRepository medicineRepository;
 	
-	
+	@Transactional(readOnly = true)
 	@Override
 	public List<Medicine> findAll() throws Exception {
 		return medicineRepository.findAll();
 	}
 
-	@javax.transaction.Transactional
+	@Transactional
 	@Override
 	public Medicine save(Medicine t) throws Exception {
 		return medicineRepository.save(t);
@@ -35,13 +35,13 @@ public class MedicineServiceImpl  implements MedicineService{
 		return medicineRepository.findById(id);
 	}
 	
-	@javax.transaction.Transactional
+	@Transactional
 	@Override
 	public void deleteById(Long id) throws Exception {
 		medicineRepository.deleteById(id);
 	}
 
-	@org.springframework.transaction.annotation.Transactional(readOnly = true)
+	@Transactional(readOnly = true)
 	@Override
 	public List<Medicine> fetchMedicineByName(String name) throws Exception {
 		// TODO Auto-generated method stub
