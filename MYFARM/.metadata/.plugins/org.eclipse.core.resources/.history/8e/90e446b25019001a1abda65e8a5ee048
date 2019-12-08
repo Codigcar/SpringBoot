@@ -1,0 +1,54 @@
+package com.farma.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.farma.entities.Patient;
+import com.farma.service.PatientService;
+
+@Controller
+@RequestMapping("/patientes")
+public class PatientController {
+
+	@Autowired
+	private PatientService patientService;
+	
+	@GetMapping("/list")
+	public String  listPatients(Model model) {
+		try {
+			model.addAttribute("patients", patientService.findAll());
+
+		} catch (Exception e) {
+			model.addAttribute("error", e.getMessage());
+		}
+		return "/patient/list";
+	}
+	
+	@GetMapping("/search")
+	public String searchPatient(@RequestParam("dni") String dni,Model model) {
+		try {
+			if(!dni.isEmpty()) {
+				List<Patient> patients=patientService.findByDni(dni);
+				if(!patients.isEmpty()) {
+				model.addAttribute("patients", "No existe paciente con este dni");
+				model.addAttribute("patients", patientService.findAll());
+				
+				}
+			}else {
+				model.addAttribute("info", "Debe ingresar un dni");
+				model.addAttribute("patients", patientService.findAll());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			model.addAttribute("info", "Debe ingresar un dni");
+		}
+	}
+	
+	
+}

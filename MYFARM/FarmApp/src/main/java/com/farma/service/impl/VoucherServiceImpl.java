@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.farma.entities.Voucher;
 import com.farma.service.VoucherService;
 
+@Service
 public class VoucherServiceImpl implements VoucherService {
 
 	@Autowired

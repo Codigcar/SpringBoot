@@ -1,0 +1,16 @@
+package com.farma.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.farma.service.PatientService;
+
+@Controller
+@RequestMapping("/patientes")
+public class PatientController {
+
+	@Autowired
+	private PatientService patientService;
+	
+}
