@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -48,6 +49,11 @@ public class Voucher {
 		// TODO Auto-generated constructor stub
 		vourcherDetail=new ArrayList<>();
 	}
+	@PrePersist
+	public void prePersist() {
+		createAt=new Date();//Toma la fecha del sistema
+							//Está pre- debido a que la fecha ya debe estar antes que se genere el voucher
+	}//Se genera esta fecha antes de la persistencia
 
 	public void addVoucherDetail(VoucherDetail item) {
 		this.vourcherDetail.add(item);

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head th:replace="layout/layout :: head">
+
+<body>
+	<header th:replace="layout/layout :: header" ></header>
+
+	<div class="container"  >
+
+		<div class="card">
+				<div class="card-header text-white bg-primary">
+					Paciente
+				</div>
+
+					<form th:action="@{/patients/search}" method="get" >
+					  <div class="form-row align-items-center">
+					    <div class="col-auto">
+					      <label class="sr-only" for="inlineFormInput">Dni</label>
+					      <input name="dni" type="text" class="form-control mb-2"  id="inlineFormInput" placeholder="Dni del paciente">
+					    </div>
+
+					    <div class="col-auto">
+					      <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+					    </div>
+					  </div>
+					</form>
+
+					<div class="table-responsive">
+					  <table class="table table-dark">
+							<thead>
+							 <tr>
+								 <th scope="col">id</th>
+								 <th scope="col">Nombre</th>
+								 <th scope="col">Apellido</th>
+								 <th scope="col">Dni</th>
+								 <th scope="col">Generar</th>
+								 <th scope="col">Ver</th>
+							 </tr>
+						 </thead>
+						
+					  </table>
+					</div>
+
+		</div>
+
+		</div>
+
+	<footer th:replace ="layout/layout :: footer" ></footer>
+</body>
+</html>
